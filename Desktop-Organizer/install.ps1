@@ -1,9 +1,9 @@
 
 $init = "https://raw.githubusercontent.com/bredsan/ESTI/Desktop-Organizer/main/init.bat"
-$init_dest = "%USERPROFILE%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup"
+$init_dest = "$home\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup"
 
 $organizer = "https://raw.githubusercontent.com/bredsan/ESTI/Desktop-Organizer/main/organizer.ps1"
-$organizer_dest = "%USERPROFILE%\Documents"
+$organizer_dest = "$home\Documents"
 
 
 Import-Module BitsTransfer
