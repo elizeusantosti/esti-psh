@@ -1,8 +1,8 @@
 
-$init = "https://raw.githubusercontent.com/bredsan/ESTI/Desktop-Organizer/main/init.bat"
+$init = "https://raw.githubusercontent.com/bredsan/ESTI/main/Desktop-Organizer/init.bat"
 $init_dest = "$home\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup"
 
-$organizer = "https://raw.githubusercontent.com/bredsan/ESTI/Desktop-Organizer/main/organizer.ps1"
+$organizer = "https://raw.githubusercontent.com/bredsan/ESTI/main/Desktop-Organizer/organizer.ps1"
 $organizer_dest = "$home\Documents"
 
 
