@@ -1,6 +1,3 @@
-# How to Install
+# Projects
 
-# [Desktop-Organizer](Desktop-Organizer) #
-* Open CMD and paste this
-
-      Powershell.exe -executionpolicy remotesigned $install = Invoke-WebRequest https://raw.githubusercontent.com/bredsan/ESTI/main/Desktop-Organizer/install.ps1;Invoke-Expression $($install.Content)
+# [Desktop-Organizer](Desktop-Organizer)
