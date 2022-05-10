@@ -1,3 +1,3 @@
 # Projects
 
-# [Desktop-Organizer](Desktop-Organizer)
+# [desktop-file-organizer](desktop-file-organizer)
