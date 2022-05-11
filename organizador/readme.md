@@ -6,4 +6,4 @@
 
 * Open CMD and paste this.
 
-      Powershell.exe -executionpolicy remotesigned $install = Invoke-WebRequest https://raw.githubusercontent.com/bredsan/ESTI/main/organizador/install.ps1;Invoke-Expression $($install.Content)
+      1. wget -O install.bat https://raw.githubusercontent.com/bredsan/ESTI/main/organizador/install.bat
