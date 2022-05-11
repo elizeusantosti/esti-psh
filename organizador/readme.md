@@ -6,7 +6,7 @@
 
 * Opção 1: Abra o POWERSHELL e cole:
 
-      1. wget -o install.bat https://raw.githubusercontent.com/bredsan/ESTI/main/organizador/install.bat
+      wget -o install.bat https://raw.githubusercontent.com/bredsan/ESTI/main/organizador/install.bat
 
 
 * Opção 2: Abra o CMD e cole:
