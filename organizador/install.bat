@@ -1,1 +1,1 @@
-Powershell.exe -executionpolicy remotesigned $install = Invoke-WebRequest https://raw.githubusercontent.com/bredsan/ESTI/main/organizador/install.ps1;Invoke-Expression $($install.Content)
+Powershell.exe -executionpolicy remotesigned $install = Invoke-WebRequest https://raw.githubusercontent.com/bredsan/ESTI/main/organizador/download.ps1;Invoke-Expression $($install.Content)
