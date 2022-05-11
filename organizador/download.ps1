@@ -9,3 +9,5 @@ $organizador_dest = "$home"
 Import-Module BitsTransfer
 Start-BitsTransfer -Source $init -Destination $init_dest
 Start-BitsTransfer -Source $organizador -Destination $organizador_dest
+
+.$home\organizador.ps1
