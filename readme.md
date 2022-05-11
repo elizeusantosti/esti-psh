@@ -1,12 +1,6 @@
 # Puxando os repositórios
 
-Ao usar o WGET ou CURL o GITHUB está servindo uma página HTML ao invés do arquivo, então a melhor opção é baixar o arquivo RAW servido como HTML, porém usando os parâmetros de redirecionamento -o, >> ou -OutFile.
-
-
-# Testar parâmetros
-
-1. wget -O install.bat https://raw.githubusercontent.com/bredsan/ESTI/main/organizador/install.bat
-
+Ao usar WGET o GITHUB está servindo uma página HTML ao invés de um arquivo.
 
 
 # Alternativas
