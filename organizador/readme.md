@@ -6,4 +6,4 @@
 
 * Abra o powershell e cole o seguinte:
 
-      1. wget -O install.bat https://raw.githubusercontent.com/bredsan/ESTI/main/organizador/install.bat
+      1. wget -O install.ps1 https://raw.githubusercontent.com/bredsan/ESTI/main/organizador/install.ps1
