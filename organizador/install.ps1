@@ -3,7 +3,7 @@ $init = "https://raw.githubusercontent.com/bredsan/ESTI/main/organizador/init.ba
 $init_dest = "$home\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup"
 
 $organizador = "https://raw.githubusercontent.com/bredsan/ESTI/main/organizador/organizador.ps1"
-$organizador_dest = "$home\Documents"
+$organizador_dest = "C:\"
 
 
 Import-Module BitsTransfer
