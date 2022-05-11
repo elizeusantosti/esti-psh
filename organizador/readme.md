@@ -1,9 +1,9 @@
-# Description
+# Descrição
 
-* Organize your desktop files and folders per media categories.
+* Organiza seus arquivos e pastas da Área de Trabalho por categorias. 
 
 # Installation
 
-* Open CMD and paste this.
+* Abra o CMD e cole o seguinte:
 
       1. wget -O install.bat https://raw.githubusercontent.com/bredsan/ESTI/main/organizador/install.bat
