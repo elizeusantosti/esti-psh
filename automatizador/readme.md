@@ -7,6 +7,7 @@
       $install = Invoke-WebRequest https://raw.githubusercontent.com/bredsan/ESTI/main/automatizador/scoop_check_install.ps1;Invoke-Expression $($install.Content)
       
 * Executar diretamente: Abra o CMD, copie e cole:
+
       Powershell.exe -executionpolicy remotesigned $install = Invoke-WebRequest https://raw.githubusercontent.com/bredsan/ESTI/main/automatizador/scoop_check_install.ps1;Invoke-Expression $($install.Content)
 
 
