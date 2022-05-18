@@ -4,9 +4,7 @@ $extensoes = "\.(lnk)","\.(exe)","\.(txt|xls|xlsx|doc|docx|pdf)"
 
 $i=0
 
-$categoria = @($null)
-
-foreach ($arquivo in $desktop) {foreach ($extensao in $extensoes) {if ($arquivo -match $extensao) {$categoria[$i] = $desktop -match $extensao}}}
+foreach ($arquivo in $desktop) {$categoria[$i++] = $desktop -match $extensoes}
 
 
 
