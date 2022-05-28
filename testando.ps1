@@ -6,3 +6,5 @@ function extensao {
         Get-Variable -Name $arg -ValueOnly
     }
 }
+
+extensao txt doc xls pdf
