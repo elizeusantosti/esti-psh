@@ -1,4 +1,4 @@
-$arquivos = get-childitem -File $home\Desktop\
+regex: $variable -match "\.(txt|xls|xlsx|doc|docx|pdf)"
 
 function extensao {
     foreach ($arg in $args) {
@@ -6,3 +6,4 @@ function extensao {
         Get-Variable -Name $arg -ValueOnly
     }
 }
+
