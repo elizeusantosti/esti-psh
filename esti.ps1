@@ -7,8 +7,6 @@
 # Já funciona com multiplos comandos, ex: esti update organizar automatizar backup 
 
 function esti {
-    [CmdletBinding()]
-    param()
     foreach ($arg in $args) {
         $url = Invoke-WebRequest https://raw.githubusercontent.com/bredsan/esti/testing/$arg.ps1
         Invoke-Expression $($url.Content)
