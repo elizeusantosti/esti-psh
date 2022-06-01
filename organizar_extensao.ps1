@@ -1,2 +1,2 @@
-$origem = gci -File
-$extensoes = $origem | select Extension
+$origem = "$home\desktop"
+$origem | foreach {gci -File}
