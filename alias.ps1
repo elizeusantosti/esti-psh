@@ -1,15 +1,24 @@
-function funcao_esti {
+function esti {
     foreach ($arg in $args) {
-        $script = "$home\documents\WindowsPowerShell\esti\"
-        if ("$script\$arg.ps1" | gci -file) {
-            .$script\$arg.ps1
+        $script = $arg.ps1
+
+        
+        $offline = "$home\documents\WindowsPowerShell\esti\$arg.ps1"
+        if ($offline | gci -file -ErrorAction SilentlyContinue) {
+            .$offline
         }
         else
         {
-            $url = Invoke-WebRequest https://raw.githubusercontent.com/bredsan/esti/main/$arg.ps1
-            Invoke-Expression $($url.Content)
+            Write-Host "O script $offline não existe." -ForegroundColor Red  
         }
+            try {$online = Invoke-WebRequest https://raw.githubusercontent.com/bredsan/esti/main/$arg.ps1} catch {}
+            if ($online.StatusCode -eq "200"){
+                Invoke-Expression $($online.Content)
+            }
+            else
+            {
+                Write-Host "O script https://raw.githubusercontent.com/bredsan/esti/main/$arg.ps1 não existe." -ForegroundColor Red
+            }
+            
     }
 }
-
-Set-Alias esti funcao_esti
