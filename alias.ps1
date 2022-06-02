@@ -1,8 +1,15 @@
-function esti_online {
+function funcao_esti {
     foreach ($arg in $args) {
-        $url = Invoke-WebRequest https://raw.githubusercontent.com/bredsan/esti/main/$arg.ps1
-        Invoke-Expression $($url.Content)
+        $script = "$home\documents\WindowsPowerShell\esti\"
+        if ("$script\$arg.ps1" | gci -file) {
+            .$script\$arg.ps1
+        }
+        else
+        {
+            $url = Invoke-WebRequest https://raw.githubusercontent.com/bredsan/esti/main/$arg.ps1
+            Invoke-Expression $($url.Content)
+        }
     }
 }
 
-Set-Alias esti esti_online
+Set-Alias esti funcao_esti
