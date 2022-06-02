@@ -1,3 +1,34 @@
+$pasta = "$home\documents\windowspowershell\"
+
+$offline = $pasta | gci -file
+
+$repo = "https://raw.githubusercontent.com/bredsan/esti/"
+
+$online = try {invoke-webrequest $repo/$arg.ps1} catch {}
+
+if (invoke-expression $($online.statuscode -eq "200")) {
+   invoke-expression $($repo/$online)
+}
+else
+{
+   write-host("O arquivo $online não existe no repositório $repo")
+}
+
+
+
+
+function esti{
+   foreach($arg in $args) {
+      
+   }
+}
+
+
+
+
+
+
+
 function esti {
     foreach ($arg in $args) {
         $script = $arg.ps1
