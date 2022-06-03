@@ -1,9 +1,6 @@
 # Importa o módulo de download de arquivos.
 Import-Module BitsTransfer
 
-$perfil = "Microsoft.powershell_profile.ps1"
-$perfil_pasta = "$home\documents\windowspowershell\"
-
 # Define scripts a serem baixados.
 $scripts = "organizar","backup","arquivos"
 
@@ -17,8 +14,10 @@ md $destino -ErrorAction SilentlyContinue
 foreach ($script in $scripts){Start-BitsTransfer -Source "https://raw.githubusercontent.com/bredsan/ESTI/main/$script.ps1" -Destination $destino}
 
 
-
 # Cria os aliases.
-md $perfil_pasta -ErrorAction SilentlyContinue
-curl -o $perfil "https://raw.githubusercontent.com/bredsan/esti/main/profile.ps1"
+$pasta = "$home\documents\windowspowershell"
+$perfil = "Microsoft.Powershell_profile.ps1"
+
+md $pasta -ErrorAction SilentlyContinue
+curl -o $pasta\$perfil "https://raw.githubusercontent.com/bredsan/esti/main/profile.ps1"
 $profile
