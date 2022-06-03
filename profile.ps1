@@ -10,14 +10,15 @@ function esti{
         else
         {
             Write-Host("A pasta local nao contem o arquivo $arquivo_atual") -ForegroundColor Red
-            Write-Host("Iniciando pesquisa no repositorio $repositorio")
+            Write-Host("Pesquisa no repositorio $repositorio") -ForegroundColor Yellow
             try {$online = Invoke-WebRequest $repositorio/$arg.ps1} catch {}
             if ($online.StatusCode -eq "200"){
+                Write-Host("Arquivo $arg.ps1 encontrado.") -ForegroundColor Green
                 Invoke-Expression $($online.Content)
             }
             else
             {
-                Write-Host "O script $repositorio/$arg.ps1 não existe." -ForegroundColor Red
+                Write-Host("O repositório nao contem o arquivo $arg.ps1.") -ForegroundColor Red
             }
 
         }
