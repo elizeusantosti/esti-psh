@@ -20,5 +20,5 @@ foreach ($script in $scripts){Start-BitsTransfer -Source "https://raw.githubuser
 
 # Cria os aliases.
 md $perfil_pasta -ErrorAction SilentlyContinue
-curl -o $perfil "https://raw.githubusercontent.com/bredsan/esti/main/alias.ps1"
+curl -o $perfil "https://raw.githubusercontent.com/bredsan/esti/main/profile.ps1"
 $profile
