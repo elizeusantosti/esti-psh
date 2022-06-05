@@ -1,3 +1,9 @@
+function dev{
+    $args|foreach{
+            $url = invoke-webrequest https://raw.githubusercontent.com/bredsan/esti/testing/$arg.ps1;invoke-expression $($url.content)
+    }
+}
+
 function esti{
     foreach ($arg in $args){
         $local = "$home\documents\WindowsPowershell\esti"
