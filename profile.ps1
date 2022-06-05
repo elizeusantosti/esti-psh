@@ -1,6 +1,6 @@
 function dev{
-    $args|foreach{
-            $url = invoke-webrequest https://raw.githubusercontent.com/bredsan/esti/testing/$arg.ps1;invoke-expression $($url.content)
+    $args | foreach{
+            invoke-webrequest -useb https://raw.githubusercontent.com/bredsan/esti/testing/$_.ps1 | invoke-expression
     }
 }
 
