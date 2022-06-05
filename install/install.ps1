@@ -11,13 +11,13 @@ $destino = "$home\documents\windowspowershell\esti"
 md $destino -ErrorAction SilentlyContinue
 
 # Função para baixar os scripts e enviar para a pasta de destino.
-foreach ($script in $scripts){Start-BitsTransfer -Source "https://raw.githubusercontent.com/bredsan/ESTI/main/$script.ps1" -Destination $destino}
+foreach ($script in $scripts){Start-BitsTransfer -Source "https://raw.githubusercontent.com/bredsan/ESTI/main/scripts/$script.ps1" -Destination $destino}
 
 
-# Cria os aliases.
+# Cria
 $pasta = "$home\documents\windowspowershell"
 $perfil = "Microsoft.Powershell_profile.ps1"
 
 md $pasta -ErrorAction SilentlyContinue
-curl -o $pasta\$perfil "https://raw.githubusercontent.com/bredsan/esti/main/profile.ps1"
+curl -o $pasta\$perfil "https://raw.githubusercontent.com/bredsan/esti/main/install/profile.ps1"
 $profile
