@@ -4,13 +4,13 @@ function dev {
     $branch_position = [array]::LastIndexOf($args,"-branch")+1
     if($branch_position -ne 0){$branch = $args[$branch_position]}else{$branch = "main"}
 
-    Invoke-WebRequest -useb "https://raw.githubusercontent.com/bredsan/esti/$branch/$script.ps1" | Invoke-Expression
+    Invoke-WebRequest -useb "https://raw.githubusercontent.com/bredsan/esti/$branch/scripts/$script.ps1" | Invoke-Expression
 }
 
 function esti{
     foreach ($arg in $args){
         $local = "$home\documents\WindowsPowershell\esti"
-        $repositorio = "https://raw.githubusercontent.com/bredsan/esti/main"
+        $repositorio = "https://raw.githubusercontent.com/bredsan/esti/main/scripts"
         $arquivo_atual = "$arg.ps1"
         $arquivos_locais = $local | Get-ChildItem -File
         if($arquivos_locais -match $arquivo_atual){
