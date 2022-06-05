@@ -1,7 +1,10 @@
-function dev{
-    $args | foreach{
-            invoke-webrequest -useb https://raw.githubusercontent.com/bredsan/esti/testing/$_.ps1 | invoke-expression
-    }
+function dev {
+    $script = $args[0]
+
+    $branch_position = [array]::LastIndexOf($args,"-branch")+1
+    if($branch_position -ne 0){$branch = $args[$branch_position]}else{$branch = "main"}
+
+    Invoke-WebRequest -useb "https://raw.githubusercontent.com/bredsan/esti/$branch/$script.ps1" | Invoke-Expression
 }
 
 function esti{

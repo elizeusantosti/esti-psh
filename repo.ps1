@@ -1,1 +1,1 @@
-$args
+Write-Host $online.Content
