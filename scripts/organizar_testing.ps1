@@ -40,5 +40,5 @@ foreach ($item in $categorias){
         {
            md $destino
            move-item $categoria_atual -destination $destino} 
-        }
+    }
 }
