@@ -1,35 +1,35 @@
 $origem = "$home\desktop"
 $arquivos = get-childitem $origem
 $categorias = @(
-("\.(lnk)","$origem\Atalhos"),
-("\.(exe)","$origem\Executaveis"),
-("\.(txt)","$origem\Documentos\Texto"),
-("\.(pdf)","$origem\Documentos\PDF"),
-("\.(xls)","$origem\Documentos\Excel"),
-("\.(doc)","$origem\Documentos\Word"),
-("\.(pptx)","$origem\Documentos\Powerpoint"),
-("\.(jpg)","$origem\Imagens\JPG"),
-("\.(png)","$origem\Imagens\PNG"),
-("\.(gif)","$origem\Imagens\GIF"),
-("\.(mp3)","$origem\Audio\MP3"),
-("\.(wav)","$origem\Audio\WAV"),
-("\.(aiff)","$origem\Audio\AIFF"),
-("\.(3gp)","$origem\Video\3GP"),
-("\.(mp4)","$origem\Video\MP4"),
-("\.(mov)","$origem\Video\MOV"),
-("\.(mkv)","$origem\Video\MKV"),
-("\.(html)","$origem\Desenvolvimento\WEB\HTML"),
-("\.(css)","$origem\Desenvolvimento\WEB\CSS"),
-("\.(js)","$origem\Desenvolvimento\WEB\JavaScript"),
-("\.(py)","$origem\Desenvolvimento\SCRIPT\Python"),
-("\.(ps1)","$origem\Desenvolvimento\SCRIPT\Powershell"),
-("\.(psm)","$origem\Desenvolvimento\SCRIPT\Powershell")
+("\.(lnk)","Atalhos"),
+("\.(exe)","Executaveis"),
+("\.(txt)","Documentos\Texto"),
+("\.(pdf)","Documentos\PDF"),
+("\.(xls)","Documentos\Excel"),
+("\.(doc)","Documentos\Word"),
+("\.(pptx)","Documentos\Powerpoint"),
+("\.(jpg)","Imagens\JPG"),
+("\.(png)","Imagens\PNG"),
+("\.(gif)","Imagens\GIF"),
+("\.(mp3)","Audio\MP3"),
+("\.(wav)","Audio\WAV"),
+("\.(aiff)","Audio\AIFF"),
+("\.(3gp)","Video\3GP"),
+("\.(mp4)","Video\MP4"),
+("\.(mov)","Video\MOV"),
+("\.(mkv)","Video\MKV"),
+("\.(html)","Desenvolvimento\WEB\HTML"),
+("\.(css)","Desenvolvimento\WEB\CSS"),
+("\.(js)","Desenvolvimento\WEB\JavaScript"),
+("\.(py)","Desenvolvimento\SCRIPT\Python"),
+("\.(ps1)","Desenvolvimento\SCRIPT\Powershell"),
+("\.(psm)","Desenvolvimento\SCRIPT\Powershell")
 )
 
 
 foreach ($item in $categorias){
     $extensao = $item[0]
-    $destino = $item[1]
+    $destino = "$origem\$item[1]"
     
     if ($arquivos -match $extensao){
         $categoria_atual = $arquivos -match $extensao
