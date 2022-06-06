@@ -6,5 +6,5 @@ $categoria = "\.(lnk)","\.(exe)","\.(txt)"
 
 foreach ($item in $categoria){
     $categoria_atual = $arquivos -match $item
-    $categoria_atual
+    $item
 }
