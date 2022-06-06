@@ -34,8 +34,8 @@ foreach ($item in $categorias){
     $categoria_atual = $arquivos -match $extensao
 
     if (test-path $destino){
-    move-item $categoria_atual $destino}
+    move-item $categoria_atual -destination $destino}
     else {
     md $destino
-    move-item $categoria_atual $destino}
+    move-item $categoria_atual -destination $destino}
 }
