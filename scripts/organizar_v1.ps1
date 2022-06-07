@@ -28,7 +28,6 @@ $categorias = @(
 
 
 foreach ($item in $categorias){
-    $item[1]<#
     $extensao = $item[0]
     $destino = $item[1]
     
@@ -41,5 +40,5 @@ foreach ($item in $categorias){
         {
            md $destino
            move-item $categoria_atual -destination $destino} 
-    }#>
+    }
 }
