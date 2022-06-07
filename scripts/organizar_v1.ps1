@@ -29,10 +29,7 @@ $categorias = @(
 
 foreach ($item in $categorias){
     $extensao = $item[0]
-    $destino = $item[1]
-    $extensao
-    $destino
-    
+    $destino = $item[1]    
     if ($arquivos -match $extensao){
         $categoria_atual = $arquivos -match $extensao
         if (test-path $destino){
