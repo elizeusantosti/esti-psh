@@ -1,11 +1,17 @@
 function dev {
     $script = $args[0]
     $branch_position = [array]::LastIndexOf($args,"-branch")+1
-    $read_position = [array]::LastIndexOf($args,"read")-1
-    
-    
     if($branch_position -ne 0){$branch = $args[$branch_position]}else{$branch = "main"}
-    Invoke-WebRequest -useb "https://raw.githubusercontent.com/bredsan/esti/$branch/scripts/$script.ps1" | Invoke-Expression
+
+    $repositorio = "https://raw.githubusercontent.com/bredsan/esti/$branch/scripts"
+
+    try {$online = Invoke-WebRequest $repositorio/$script.ps1} catch {}
+            if ($online.StatusCode -eq "200"){
+                Invoke-Expression $($online.Content)
+            }
+            else {
+                Write-Host("A branch $branch nao contem o arquivo $script.ps1") -ForegroundColor Red
+            }
 }
 
 function esti{
