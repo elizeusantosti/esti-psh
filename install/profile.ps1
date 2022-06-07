@@ -1,14 +1,23 @@
 function dev {
-    # Cria a lista de parametros
     $lista = "read","-branch"
-    # Para cada parametro da lista
     $parametro = foreach ($item in $lista){
-        # Verifica a posicao de cada parametro da $lista em $args
         $posicao = [array]::LastIndexOf($args,"$item")+1
-        # Se o parametro for igual a 0 retorna o valor $null
         if($posicao -ne 0) {$args[$posicao]}else{$null}
     }
+
     $read = $parametro[0]
     $branch = $parametro[1]
-    
+
+    if($read){$arquivo = $read}else{$arquivo = $args[0]}
+    if($branch){$branch_atual = $branch}else{$branch_atual = "main"}
+
+    try {$url = Invoke-WebRequest https://raw.githubusercontent.com/bredsan/esti/$branch_atual/scripts/$arquivo} catch {}
+        if ($url.StatusCode -eq "200")
+        {
+            if($read){$url.content}else{Invoke-Expression $($url.content)}
+        }
+        else
+        {
+            Write-Host("A branch $branch_atual nao contem o arquivo $arquivo") -ForegroundColor Red
+        }
 }
