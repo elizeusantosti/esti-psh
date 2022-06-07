@@ -28,7 +28,7 @@ $categorias = @(
 
 
 foreach ($item in $categorias){
-    $item<#
+    $item[0][1]<#
     $extensao = $item[0]
     $destino = $origem\$item[0]
     
