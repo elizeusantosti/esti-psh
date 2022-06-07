@@ -30,6 +30,8 @@ $categorias = @(
 foreach ($item in $categorias){
     $extensao = $item[0]
     $destino = $item[1]
+    $extensao
+    $destino
     
     if ($arquivos -match $extensao){
         $categoria_atual = $arquivos -match $extensao
