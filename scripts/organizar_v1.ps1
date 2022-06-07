@@ -28,8 +28,9 @@ $categorias = @(
 
 
 foreach ($item in $categorias){
+    $item<#
     $extensao = $item[0]
-    $destino = $origem\$item[1]
+    $destino = $origem\$item[0]
     
     if ($arquivos -match $extensao){
         $categoria_atual = $arquivos -match $extensao
@@ -40,5 +41,5 @@ foreach ($item in $categorias){
         {
            md $destino
            move-item $categoria_atual -destination $destino} 
-    }
+    }#>
 }
