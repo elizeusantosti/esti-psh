@@ -7,3 +7,5 @@ function extensao {
     }
 }
 
+﻿$origem = gci -File | select Name
+select Extension
