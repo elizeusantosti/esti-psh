@@ -35,7 +35,7 @@ foreach ($pasta in $origem){
 FUNCIONANDO
 
 #----------------------------------
-#OBS: Mais lento, n„o copia pastas,
+#OBS: Mais lento, n√£o copia pastas,
 #----------------------------------
 $origem = "$home\desktop"
 gci -Path $origem -Recurse | foreach {$destino =  "C:\teste\$($_.name)"; Write-Host "Transferindo $($_.Fullname) para $destino";Start-BitsTransfer -Source $($_.Fullname) -Destination $destino}
