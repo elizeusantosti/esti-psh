@@ -13,7 +13,7 @@ function organizar {
     # Cria uma nova lista para adicionar os arquivos
     $extensoes = New-Object Collections.Generic.List[String]
 
-    Write-Host "Pegando arquivos e criando subpastas das extensoes se n„o existir..."
+    Write-Host "Pegando arquivos e criando subpastas das extensoes se n√£o existir..."
     foreach($pasta in $pasta_extensao){
         [System.IO.Directory]::CreateDirectory("$atual\$($pasta.Extension)") | Out-Null
         $extensoes.Add($pasta.Extension)
@@ -26,7 +26,7 @@ function organizar {
                 Move-Item $arquivo.FullName -Destination "$atual\$($arquivo.Extension)" -Force -ErrorAction Stop
             }
             catch { 
-                Write-Warning "Falha ao mover arquivo '$arquivo' para a pasta '$($arquivo.Extension)'. Arquivo j· existe na pasta ou est· em uso."
+                Write-Warning "Falha ao mover arquivo '$arquivo' para a pasta '$($arquivo.Extension)'. Arquivo j√° existe na pasta ou est√° em uso."
             }
         }
         
