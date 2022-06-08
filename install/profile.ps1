@@ -11,7 +11,7 @@ function dev {
     if($read){$arquivo = $read}else{$arquivo = $args[0]}
     if($branch){$branch_atual = $branch}else{$branch_atual = "main"}
 
-    try {$url = Invoke-WebRequest https://raw.githubusercontent.com/bredsan/esti/$branch_atual/scripts/$arquivo} catch {}
+    try {$url = Invoke-WebRequest https://raw.githubusercontent.com/elizeusantosti/esti/$branch_atual/scripts/$arquivo} catch {}
         if ($url.StatusCode -eq "200")
         {
             if($read){$url.content}else{Invoke-Expression $($url.content)}
