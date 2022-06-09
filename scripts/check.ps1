@@ -1,3 +1,6 @@
+$check_origem = "$home\documents\WindowsPowershell\$app\$check_$app.xml"
+
+
 <#
 
 Usa Invoke para chamar esse Script local
