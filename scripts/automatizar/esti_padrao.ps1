@@ -1,3 +1,5 @@
+scoop install lessmsi; scoop config MSIEXTRACT_USE_LESSMSI $true
+
 scoop install git
 
 scoop bucket add extras
