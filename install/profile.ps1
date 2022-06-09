@@ -17,7 +17,7 @@ function dev {
     $branch = $parametro[2]
 
     if($uninstall -eq "dev"){
-        del Microsoft.Powershell_profile.ps1;del dev;del esti;exit
+        del Microsoft.Powershell_profile.ps1;del dev;del esti
     }
     else
     {
