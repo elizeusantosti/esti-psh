@@ -1,12 +1,30 @@
 function dev {
-    $lista = "read","-branch"
+    $lista = "uninstall","read","-branch"
     $parametro = foreach ($item in $lista){
         $posicao = [array]::LastIndexOf($args,"$item")+1
-        if($posicao -ne 0) {$args[$posicao]}else{$null}
+        if($posicao -ne 0) {
+            $args[$posicao]
+        }
+        else
+        {
+            $null
+        }
+        
     }
 
-    $read = $parametro[0]
-    $branch = $parametro[1]
+    $uninstall = $parametro[0]
+    $read = $parametro[1]
+    $branch = $parametro[2]
+
+    if($uninstall -eq "dev"){
+        del Microsoft.Powershell_profile.ps1;del dev;del esti
+    }
+    else
+    {
+        if($uninstall -eq "scoop"){
+            scoop uninstall scoop -p
+        }
+    }
 
     if($read){$arquivo = $read}else{$arquivo = $args[0]}
     if($branch){$branch_atual = $branch}else{$branch_atual = "main"}
