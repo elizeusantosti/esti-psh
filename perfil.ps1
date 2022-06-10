@@ -1,9 +1,12 @@
+$dev = Invoke-WebRequest https://raw.githubusercontent.com/elizeusantosti/esti/dev/dev.ps1 | Invoke-Expression
+$esti = Invoke-WebRequest https://raw.githubusercontent.com/elizeusantosti/esti/dev/esti.ps1 | Invoke-Expression
+
 function dev {
     # Carrega o perfil DEV
-    echo "Ambiente em desenvolvimento"
+    $dev
 }
 
 function esti {
     # Carrega o perfil ESTI
-    echo "Ambiente em desenvolvimento"
+    $esti
 }
