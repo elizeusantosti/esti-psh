@@ -1,3 +1,4 @@
+"Em desenvolvimento"
 $parametros = "backup","auto-install"
 
 $parametro = foreach ($item in $parametros)
