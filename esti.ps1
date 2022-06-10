@@ -1,9 +1,9 @@
-"Em desenvolvimento"
-$parametros = "backup","auto-install"
+<<<<<<< HEAD
+$caminho = split-path -parent $MyInvocation.MyCommand.Definition
 
-$parametro = foreach ($item in $parametros)
-{
-    $posicao = [array]::LastIndexOf($args,"$item")+1
-    if($posicao -ne 0){$args[$posicao]}else{$null}
-    $item      
+$esti_local =  Invoke-Expression -Command $caminho\esti\scripts\esti.ps1
+
+function esti {
+    # Carrega o perfil ESTI
+    $esti_local
 }
