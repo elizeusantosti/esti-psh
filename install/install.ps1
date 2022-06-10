@@ -19,5 +19,5 @@ $pasta = "$home\documents\windowspowershell"
 $perfil = "Microsoft.Powershell_profile.ps1"
 
 md $pasta -ErrorAction SilentlyContinue
-curl -o $pasta\$perfil "https://raw.githubusercontent.com/elizeusantosti/esti/main/install/profile.ps1"
+curl -o $pasta\$perfil "https://raw.githubusercontent.com/elizeusantosti/esti/main/install/perfil.ps1"
 $profile
