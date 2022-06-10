@@ -1,3 +1,9 @@
 function dev {
-    echo "FUNCIONOU"
+    # Carrega o perfil DEV
+    echo "Ambiente em desenvolvimento"
+}
+
+function esti {
+    # Carrega o perfil ESTI
+    echo "Ambiente em desenvolvimento"
 }
