@@ -1,0 +1,4 @@
+# Verifica se o scoop está instalado, rodando o próprio comando scoop.
+    if ([bool](Get-Command -Name 'scoop' -ErrorAction SilentlyContinue)) {
+        Deny-Install "Scoop já está instalado."
+    }
