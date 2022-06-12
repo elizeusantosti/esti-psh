@@ -16,7 +16,7 @@ function download([string]$arquivo, [string]$origem, [string]$destino) {
     }
 }
 
-Function nova_pasta($pasta, $destino) {
+function nova_pasta($pasta, $destino) {
     Try {
         New-Item -Path $destino\$pasta -ItemType Directory -ErrorAction Stop
     }
