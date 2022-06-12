@@ -2,7 +2,7 @@
     Invoke-WebRequest https://raw.githubusercontent.com/elizeusantosti/esti/main/$arquivo.ps1 | Invoke-Expression
 }
 
-import core
+import esti_core
 
 nova_pasta scripts $pasta_esti
 
