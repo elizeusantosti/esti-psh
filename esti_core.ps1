@@ -30,3 +30,5 @@ $scripts = "automatizar.ps1","arquivos.ps1","organizar.ps1","backup.ps1"
 $scripts_url =  "https://raw.githubusercontent.com/elizeusantosti/esti/main/scripts/"
 
 $pasta_esti = "$home\documents\windowspowershell\esti\"
+
+import esti_core
