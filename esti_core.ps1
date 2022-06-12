@@ -31,4 +31,4 @@ $scripts_url =  "https://raw.githubusercontent.com/elizeusantosti/esti/main/scri
 
 $pasta_esti = "$home\documents\windowspowershell\esti\"
 
-import esti_core
+import install.ps1
