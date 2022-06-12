@@ -1,4 +1,4 @@
-﻿# Define a função para importar arquivos do github. 
+﻿# Define a funcao para importar arquivos do github. 
 function import([string]$arquivo){
     Invoke-WebRequest https://raw.githubusercontent.com/elizeusantosti/esti/main/$arquivo | Invoke-Expression
 }
