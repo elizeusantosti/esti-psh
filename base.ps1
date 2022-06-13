@@ -1,6 +1,12 @@
-function import($arquivo){
+$main =  "https://raw.githubusercontent.com/elizeusantosti/esti/main"
+$main_scripts =  "$main/scripts"
+$powershell = "$home\documents\windowspowershell"
+$esti = "$powershell\esti"
+$pasta_scripts = "$esti\scripts"
+
+function importar($arquivo){
     try {
-        Invoke-WebRequest https://raw.githubusercontent.com/elizeusantosti/esti/main/$arquivo | Invoke-Expression
+        Invoke-WebRequest $main/$arquivo | Invoke-Expression
     }
     catch {
         Write-Host $_.Exception.Message -ForegroundColor Red
@@ -26,13 +32,3 @@ function nova_pasta($pasta) {
 }
 
 $scripts = "automatizar.ps1","arquivos.ps1","organizar.ps1","backup.ps1"
-
-$main =  "https://raw.githubusercontent.com/elizeusantosti/esti/main"
-
-$main_scripts =  "$main/scripts"
-
-$pasta_principal= "$home\documents\windowspowershell"
-
-$pasta_esti = "$pasta_principal\esti"
-
-$pasta_esti_scripts = "$pasta_esti\scripts"
