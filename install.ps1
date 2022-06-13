@@ -8,4 +8,5 @@ foreach ($script in $scripts){
 
 download profile.ps1 $main $pasta_principal\Microsoft.Powershell_profile.ps1
 
+import profile.ps1
 $profile
