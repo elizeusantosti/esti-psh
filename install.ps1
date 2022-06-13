@@ -9,4 +9,4 @@ foreach ($script in $scripts){
 download base.ps1 $main $esti
 download profile.ps1 $main $powershell\Microsoft.Powershell_profile.ps1
 
-import profile.ps1
+importar profile.ps1 -remoto
