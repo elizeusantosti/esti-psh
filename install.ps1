@@ -1,11 +1,12 @@
-Invoke-WebRequest https://raw.githubusercontent.com/elizeusantosti/esti/main/core.ps1 | Invoke-Expression
+Invoke-WebRequest https://raw.githubusercontent.com/elizeusantosti/esti/main/base.ps1 | Invoke-Expression
 
-nova_pasta  $pasta_esti_scripts
+nova_pasta  $pasta_scripts
 
 foreach ($script in $scripts){
-    download $script $main_scripts $pasta_esti_scripts
+    download $script $main_scripts $pasta_scripts
 }
 
-download profile.ps1 $main $pasta_principal\Microsoft.Powershell_profile.ps1
+download base.ps1 $main $esti
+download profile.ps1 $main $powershell\Microsoft.Powershell_profile.ps1
 
 import profile.ps1
