@@ -9,14 +9,16 @@ function importar(){
     [cmdletbinding()]
     param(
         [Parameter(Mandatory=$true, Position=0)]
-        [string]$arquivo,
+        [string]$script,
         [Parameter(Mandatory=$true, Position=1)]
-        [ValidateSet('Local','Remoto')]
+        [string]$origem,
+        [Parameter(Mandatory=$true, Position=2)]
+        [ValidateSet('local','remoto')]
         [string]$Item
     )
     Switch ($Item){
-        'local' {Invoke-Expression -Command '.$esti\$arquivo.ps1'}
-        'remoto' {Invoke-WebRequest $arquivo | Invoke-Expression}
+        'local' {Invoke-Expression -Command '.$origem\$script'}
+        'remoto' {Invoke-WebRequest $origem\$script | Invoke-Expression}
     }
 }
 
