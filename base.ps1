@@ -16,7 +16,7 @@ function importar(){
     )
     Switch ($Item){
         'local' {Invoke-Expression -Command '.$esti\$arquivo.ps1'}
-        'remoto' {Invoke-WebRequest $main/$arquivo.ps1 | Invoke-Expression}
+        'remoto' {Invoke-WebRequest $arquivo | Invoke-Expression}
     }
 }
 
