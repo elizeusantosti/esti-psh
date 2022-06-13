@@ -27,6 +27,12 @@ function nova_pasta($pasta) {
 
 $scripts = "automatizar.ps1","arquivos.ps1","organizar.ps1","backup.ps1"
 
-$scripts_url =  "https://raw.githubusercontent.com/elizeusantosti/esti/main/scripts/"
+$main =  "https://raw.githubusercontent.com/elizeusantosti/esti/main"
 
-$pasta_esti = "$home\documents\windowspowershell\esti\scripts\"
+$main_scripts =  "$main/scripts"
+
+$pasta_powershell = "$home\documents\windowspowershell"
+
+$pasta_esti = "$pasta_powershell\esti"
+
+$pasta_esti_scripts = "$pasta_esti\scripts\"
