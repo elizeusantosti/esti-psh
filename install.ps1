@@ -7,6 +7,6 @@ foreach ($script in $scripts){
 }
 
 download base.ps1 $main $esti
-download profile.ps1 $main $powershell\Microsoft.Powershell_profile.ps1
+download perfil.ps1 $main $powershell\Microsoft.Powershell_profile.ps1
 
-importar profile remoto
+importar Microsoft.Powershell_profile local
