@@ -11,14 +11,12 @@ function importar(){
         [Parameter(Mandatory=$true, Position=0)]
         [string]$script,
         [Parameter(Mandatory=$true, Position=1)]
-        [string]$origem,
-        [Parameter(Mandatory=$true, Position=2)]
         [ValidateSet('local','remoto')]
         [string]$Item
     )
     Switch ($Item){
-        'local' {Invoke-Expression -Command '.$origem\$script'}
-        'remoto' {Invoke-WebRequest $origem\$script | Invoke-Expression}
+        'local' {Invoke-Expression -Command '.$script'}
+        'remoto' {Invoke-WebRequest $script | Invoke-Expression}
     }
 }
 
