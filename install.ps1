@@ -1,4 +1,4 @@
-﻿function import([string]$arquivo){
+﻿function gh-import([string]$arquivo){
     try {
         Invoke-WebRequest https://raw.githubusercontent.com/elizeusantosti/esti/main/$arquivo | Invoke-Expression
     }
