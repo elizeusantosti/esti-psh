@@ -31,8 +31,8 @@ $main =  "https://raw.githubusercontent.com/elizeusantosti/esti/main"
 
 $main_scripts =  "$main/scripts"
 
-$pasta_powershell = "$home\documents\windowspowershell"
+$pasta_principal= "$home\documents\windowspowershell"
 
-$pasta_esti = "$pasta_powershell\esti"
+$pasta_esti = "$pasta_principal\esti"
 
-$pasta_esti_scripts = "$pasta_esti\scripts\"
+$pasta_esti_scripts = "$pasta_esti\scripts"
