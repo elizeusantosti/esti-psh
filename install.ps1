@@ -6,4 +6,4 @@ foreach ($script in $scripts){
     download $script $main_scripts $pasta_esti_scripts
 }
 
-download $main\Microsoft.Powershell_profile.ps1 $pasta_principal
+download Microsoft.Powershell_profile.ps1 $main $pasta_principal
