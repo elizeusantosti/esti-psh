@@ -2,7 +2,8 @@ $origem = "$home\desktop"
 $arquivos = get-childitem $origem
 $categorias = @(
 ("\.(lnk)","$origem\Atalhos"),
-("\.(exe)","$origem\Executaveis"),
+("\.(exe)","$origem\Instaladores"),
+("\.(msi)","$origem\Instaladores"),
 ("\.(txt)","$origem\Documentos\Texto"),
 ("\.(pdf)","$origem\Documentos\PDF"),
 ("\.(xls)","$origem\Documentos\Excel"),
@@ -29,7 +30,7 @@ $categorias = @(
 
 foreach ($item in $categorias){
     $extensao = $item[0]
-    $destino = $item[1]    
+    $destino = $item[1]
     if ($arquivos -match $extensao){
         $categoria_atual = $arquivos -match $extensao
         if (test-path $destino){
@@ -45,7 +46,7 @@ foreach ($item in $categorias){
 #   PASTAS   #------------------------------------------------------------------------------------------------------------------------------------------
 $destino_pastas = "$origem\Pastas"
 
-$exclusao = @("*atalhos*", "*executaveis*", "*documentos*", "*desenvolvimento*", "*imagens*", "*audio*", "*videos*", "*pastas*")
+$exclusao = @("*atalhos*", "*instaladores*", "*documentos*", "*desenvolvimento*", "*imagens*", "*audio*", "*videos*", "*pastas*")
 
 $pastas = get-childitem -path $home\Desktop\ -directory -exclude $exclusao
 

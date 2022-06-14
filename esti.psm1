@@ -15,9 +15,10 @@ function desinstalar{
         [CmdletBinding()][Parameter(mandatory, position=0)]$modulo
     )
     try {
-        rm -r -fo $modules\$modulo
-        rm -r -fo $modules\"$modulo"_functions
-        rm -r -fo $pasta_scripts\$modulo
+        $pastas = "$modules\$modulo", "$modules\"$modulo"_functions", $pasta_scripts\$modulo
+        foreach($pasta in $pastas){
+            if($pasta -match "esti"){rm -r -fo $pasta}
+        }
     }
     catch {
         Write-Host $_.Exception.Message -ForegroundColor red
