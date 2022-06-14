@@ -1,6 +1,5 @@
 Invoke-WebRequest https://raw.githubusercontent.com/elizeusantosti/esti/main/esti_functions.psm1 | Invoke-Expression
-
-importar $main/variaveis.ps1 remoto
+Invoke-WebRequest https://raw.githubusercontent.com/elizeusantosti/esti/main/variaveis.ps1 | Invoke-Expression
 
 nova-pasta  $modules\esti
 nova-pasta  $modules\esti_functions
