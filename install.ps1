@@ -1,15 +1,13 @@
-Invoke-WebRequest https://raw.githubusercontent.com/elizeusantosti/esti/main/base.ps1 | Invoke-Expression
+Invoke-WebRequest https://raw.githubusercontent.com/elizeusantosti/esti/main/esti_functions.psm1 | Invoke-Expression
 
-nova_pasta  $pasta_scripts
+importar $main/variaveis.ps1 remoto
 
-foreach ($script in $scripts){
-    download $script $main_scripts $pasta_scripts
-}
+nova-pasta  $modules\esti
+nova-pasta  $modules\esti_functions
+nova_pasta  $pasta_scripts\esti
 
-download base.ps1 $main $esti
 
-download perfil.ps1 $main $powershell\Microsoft.Powershell_profile.ps1
-
-importar $powershell\Microsoft.Powershell_profile.ps1 local
-
-$profile
+baixar $main/esti.psm1 $modules\esti
+baixar $main/esti_functions.psm1 $modules\esti_functions
+$scripts = "automatizar.ps1","arquivos.ps1","organizar.ps1","backup.ps1"
+foreach ($script in $scripts) {baixar $main/scripts/$script $pasta_scripts\esti}

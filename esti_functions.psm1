@@ -1,10 +1,3 @@
-$main =  "https://raw.githubusercontent.com/elizeusantosti/esti/main"
-$main_scripts =  "$main/scripts"
-$powershell = "$home\documents\windowspowershell"
-$esti = "$powershell\esti"
-$pasta_scripts = "$esti\scripts"
-$scripts = "automatizar.ps1","arquivos.ps1","organizar.ps1","backup.ps1"
-
 function importar(){
     [cmdletbinding()]
     param(
@@ -20,9 +13,16 @@ function importar(){
     }
 }
 
-function download([string]$arquivo, [string]$origem, [string]$destino) {
+function download() {
+    [cmdletbinding()]
+    param(
+        [Parameter(Mandatory=$true, Position=0)]
+        [string]$origem,
+        [Parameter(Mandatory=$true, Position=1)]
+        [string]$destino
+    )
     Try {
-        Start-BitsTransfer -Source $origem/$arquivo -Destination $destino
+        Start-BitsTransfer -Source $origem -Destination $destino
     }
     Catch {
         Write-Host $_.Exception.Message -ForegroundColor Red
