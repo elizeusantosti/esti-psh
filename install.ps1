@@ -3,7 +3,7 @@ Invoke-WebRequest https://raw.githubusercontent.com/elizeusantosti/esti/main/var
 
 nova-pasta  $modules\esti
 nova-pasta  $modules\esti_functions
-nova_pasta  $pasta_scripts\esti
+nova-pasta  $pasta_scripts\esti
 
 
 baixar $main/esti.psm1 $modules\esti
