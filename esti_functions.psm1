@@ -1,19 +1,22 @@
+Invoke-Expression -Command '.$home\documents\windowspowershell\variables\padrao.ps1
+
 function importar(){
     [cmdletbinding()]
     param(
         [Parameter(Mandatory=$true, Position=0)]
         [string]$script,
         [Parameter(Mandatory=$true, Position=1)]
-        [ValidateSet('local','remoto')]
+        [ValidateSet('-local','-remoto')]
         [string]$Item
     )
     Switch ($Item){
-        'local' {Invoke-Expression -Command '.$script'}
-        'remoto' {Invoke-WebRequest $script | Invoke-Expression}
+        '-local' {Invoke-Expression -Command '.$variaveis\$script.ps1'}
+        '-remoto' {Invoke-WebRequest $main/variaveis/$script.ps1 | Invoke-Expression}
     }
 }
 
 function baixar() {
+    importar apps -remoto
     [cmdletbinding()]
     param(
         [Parameter(Mandatory=$true, Position=0)]
