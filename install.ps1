@@ -7,6 +7,7 @@ nova-pasta  $pasta_scripts\esti
 
 
 baixar $main/esti.psm1 $modules\esti
+baixar $main/variaveis.ps1 $modules\esti
 baixar $main/esti_functions.psm1 $modules\esti_functions
 $scripts = "automatizar.ps1","arquivos.ps1","organizar.ps1","backup.ps1"
 foreach ($script in $scripts) {baixar $main/scripts/$script $pasta_scripts\esti}
