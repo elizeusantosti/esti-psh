@@ -13,7 +13,7 @@ function importar(){
     }
 }
 
-function download() {
+function baixar() {
     [cmdletbinding()]
     param(
         [Parameter(Mandatory=$true, Position=0)]
@@ -29,7 +29,7 @@ function download() {
     }
 }
 
-function nova_pasta($pasta) {
+function nova-pasta($pasta) {
     Try {
         New-Item -Path $pasta -ItemType Directory -ErrorAction Stop
     }
