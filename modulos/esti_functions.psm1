@@ -1,5 +1,3 @@
-Invoke-Expression -Command '.$home\documents\windowspowershell\variables\padrao.ps1'
-
 function importar(){
     [cmdletbinding()]
     param(
@@ -10,13 +8,14 @@ function importar(){
         [string]$Item
     )
     Switch ($Item){
-        '-local' {Invoke-Expression -Command '.$variaveis\$script.ps1'}
-        '-remoto' {Invoke-WebRequest $main/variaveis/$script.ps1 | Invoke-Expression}
+        '-local' {Invoke-Expression -Command '.$home\documents\windowspowershell\variaveis\$script.ps1'}
+        '-remoto' {Invoke-WebRequest https://raw.githubusercontent.com/elizeusantosti/esti/main/variaveis/$script.ps1 | Invoke-Expression}
     }
 }
 
 function baixar() {
-    importar apps -remoto
+    importar padrao -remoto
+    importar instaladores -remoto
     [cmdletbinding()]
     param(
         [Parameter(Mandatory=$true, Position=0)]
@@ -25,6 +24,7 @@ function baixar() {
         [string]$destino
     )
     Try {
+        Write-Host("Baixando $origem para $destino" -ForegroundColor Yellow)
         Start-BitsTransfer -Source $origem -Destination $destino
     }
     Catch {
@@ -32,8 +32,9 @@ function baixar() {
     }
 }
 
-function nova-pasta($pasta) {
+function criar-pasta($pasta) {
     Try {
+        Write-Host("Criando a pasta $pasta")
         New-Item -Path $pasta -ItemType Directory -ErrorAction Stop
     }
     Catch {
