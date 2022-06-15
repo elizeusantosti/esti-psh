@@ -1,8 +1,7 @@
 # Invoca as funcoes necessarias.
 Invoke-WebRequest https://raw.githubusercontent.com/elizeusantosti/esti/main/esti_functions.psm1 | Invoke-Expression
 
-# Se não funcionar usar Invoke-WebRequest https://raw.githubusercontent.com/elizeusantosti/esti/main/variaveis/padrao.ps1 | Invoke-Expression
-importar padrao -remoto
+Invoke-WebRequest https://raw.githubusercontent.com/elizeusantosti/esti/main/variaveis/padrao.ps1 | Invoke-Expression
 
 # Se nao existir cria as seguintes pastas.
 $pasta.variaveis.values | foreach {criar-pasta $_}
