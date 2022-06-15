@@ -1,4 +1,4 @@
-Invoke-Expression -Command '.$home\documents\windowspowershell\variables\padrao.ps1
+Invoke-Expression -Command '.$home\documents\windowspowershell\variables\padrao.ps1'
 
 function importar(){
     [cmdletbinding()]
