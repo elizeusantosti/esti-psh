@@ -4,12 +4,12 @@ function importar(){
         [Parameter(Mandatory=$true, Position=0)]
         [string]$script,
         [Parameter(Mandatory=$true, Position=1)]
-        [ValidateSet('-local','-remoto')]
+        [ValidateSet('local','remoto')]
         [string]$Item
     )
     Switch ($Item){
-        '-local' {Invoke-Expression -Command '.$home\documents\windowspowershell\variaveis\$script.ps1'}
-        '-remoto' {Invoke-WebRequest https://raw.githubusercontent.com/elizeusantosti/esti/main/variaveis/$script.ps1 | Invoke-Expression}
+        'local' {Invoke-Expression -Command '.$home\documents\windowspowershell\variaveis\$script.ps1'}
+        'remoto' {Invoke-WebRequest https://raw.githubusercontent.com/elizeusantosti/esti/main/variaveis/$script.ps1 | Invoke-Expression}
     }
 }
 
