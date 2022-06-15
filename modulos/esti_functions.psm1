@@ -14,16 +14,17 @@ function importar(){
 }
 
 function baixar() {
-    [cmdletbinding()]
+    [CmdletBinding()]
     param(
         [Parameter(Mandatory=$true, Position=0)]
-        [string]$origem,
+        [ParameterType]$arquivo],
         [Parameter(Mandatory=$true, Position=1)]
-        [string]$destino
+        [ParameterType]$destino]
     )
-    Try {
+    try {
         Start-BitsTransfer -Source $origem -Destination $destino
-    Catch {
+    }
+    catch {
         Write-Host $_.Exception.Message -ForegroundColor Red
     }
 }
