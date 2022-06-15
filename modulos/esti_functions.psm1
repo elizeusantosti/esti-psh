@@ -17,9 +17,9 @@ function baixar() {
     [CmdletBinding()]
     param(
         [Parameter(Mandatory=$true, Position=0)]
-        [ParameterType]$arquivo],
+        [string]$arquivo],
         [Parameter(Mandatory=$true, Position=1)]
-        [ParameterType]$destino]
+        [string]$destino]
     )
     try {
         Start-BitsTransfer -Source $origem -Destination $destino
