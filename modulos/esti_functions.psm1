@@ -14,8 +14,6 @@ function importar(){
 }
 
 function baixar() {
-    importar padrao -remoto
-    importar instaladores -remoto
     [cmdletbinding()]
     param(
         [Parameter(Mandatory=$true, Position=0)]
@@ -24,9 +22,7 @@ function baixar() {
         [string]$destino
     )
     Try {
-        Write-Host("Baixando $origem para $destino" -ForegroundColor Yellow)
         Start-BitsTransfer -Source $origem -Destination $destino
-    }
     Catch {
         Write-Host $_.Exception.Message -ForegroundColor Red
     }
@@ -34,7 +30,6 @@ function baixar() {
 
 function criar-pasta($pasta) {
     Try {
-        Write-Host("Criando a pasta $pasta")
         New-Item -Path $pasta -ItemType Directory -ErrorAction Stop
     }
     Catch {
