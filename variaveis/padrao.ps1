@@ -1,10 +1,10 @@
 # URL -----------------------------------------------------------------
-$esti=@{
+$global:esti=@{
     main = "https://raw.githubusercontent.com/elizeusantosti/esti/main/"
     dev = "https://raw.githubusercontent.com/elizeusantosti/esti/dev/" 
 }
 
-$main=@{
+$global:main=@{
     diretorios=@{
         variaveis = $esti.main+"variaveis/"
         modulos = $esti.main+"modulos/"
@@ -33,7 +33,7 @@ $main=@{
 
 
 # PASTAS -----------------------------------------------------------
-$pasta=@{
+$global:pasta=@{
     powershell = "$home\documents\windowspowershell\"
 
     variaveis = @{
@@ -54,7 +54,7 @@ $pasta=@{
 
 
 # ARQUIVOS -----------------------------------------------------------
-$local=@{
+$global:local=@{
     variaveis=@{
         padrao = $pasta.variaveis.esti+"padrao.ps1"
         instaladores = $pasta.variaveis.esti+"instaladores.ps1"
