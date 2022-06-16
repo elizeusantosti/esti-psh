@@ -13,7 +13,7 @@ function importar(){
     }
 }
 
-function baixar() {
+function baixar(){
     [CmdletBinding()]
     param(
         [Parameter(Mandatory=$true, Position=0)]
@@ -29,7 +29,7 @@ function baixar() {
     }
 }
 
-function criar-pasta($pasta) {
+function criar-pasta($pasta){
     Try {
         New-Item -Path $pasta -ItemType Directory -ErrorAction Stop
     }
