@@ -1,5 +1,5 @@
 # Invoca as funcoes necessarias.
-Invoke-WebRequest -Uri "https://raw.githubusercontent.com/elizeusantosti/esti/main/variaveis/esti_functions.ps1" | Invoke-Expression
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/elizeusantosti/esti/main/modulos/esti_functions.psm1" | Invoke-Expression
 Invoke-WebRequest -Uri "https://raw.githubusercontent.com/elizeusantosti/esti/main/variaveis/padrao.ps1" | Invoke-Expression
 
 # Se nao existir cria as seguintes pastas.
