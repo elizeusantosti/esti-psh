@@ -18,7 +18,7 @@ $main.importar.values | ForEach-Object {baixar $_ $pasta.importar.esti}
 
 # Modulos -------------------------------------------------------------
 baixar $main.modules.esti $pasta.modules.esti
-baixar $main.modules.esti_functions $pasta.modules.esti_functions
+baixar $main.modules.custom_functions $pasta.modules.custom_functions
 #----------------------------------------------------------------------
 
 
