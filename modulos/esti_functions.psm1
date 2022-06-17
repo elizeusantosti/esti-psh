@@ -8,8 +8,8 @@ function importar(){
         [string]$Item
     )
     Switch ($Item){
-        'local' {Invoke-Expression -Command '.$home\documents\windowspowershell\variaveis\$script.ps1'}
-        'remoto' {Invoke-WebRequest -Uri "https://raw.githubusercontent.com/elizeusantosti/esti/main/variaveis/$script.ps1" | Invoke-Expression}
+        'local' {Invoke-Expression -Command '.$script'}
+        'remoto' {Invoke-WebRequest -Uri "$script" | Invoke-Expression}
     }
 }
 
