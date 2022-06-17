@@ -6,19 +6,20 @@ $global:esti=@{
 
 $global:main=@{
     diretorios=@{
-        variaveis = $esti.main+"variaveis/"
+        importar = $esti.main+"importar/"
         modulos = $esti.main+"modulos/"
         scripts = $esti.main+"scripts/"
     }
 
-    variaveis=@{
-        padrao = $main.diretorios.variaveis+"padrao.ps1"
-        instaladores = $main.diretorios.variaveis+"instaladores.ps1"
+    importar=@{
+        variaveis = $main.diretorios.importar+"variaveis.ps1"
+        functions = $main.diretorios.importar+"functions.ps1"
+        instaladores = $main.diretorios.importar+"instaladores.ps1"
     }
     
     modulos=@{        
         esti=$main.diretorios.modulos+"esti.psm1"
-        esti_functions = $main.diretorios.modulos+"esti_functions.psm1"
+        custom_functions = $main.diretorios.modulos+"custom_functions.psm1"
     }
 
     scripts=@{
@@ -36,13 +37,13 @@ $global:main=@{
 $global:pasta=@{
     powershell = "$home\documents\windowspowershell\"
 
-    variaveis = @{
-        esti = $pasta.powershell+"variaveis\esti\"
+    importar = @{
+        esti = $pasta.powershell+"importar\esti\"
     }
 
     modules = @{
         esti = $pasta.powershell+"modules\esti\"
-        esti_functions = $pasta.powershell+"modules\esti_functions\"
+        custom_functions = $pasta.powershell+"modules\custom_functions\"
     }
 
     scripts = @{
@@ -55,9 +56,10 @@ $global:pasta=@{
 
 # ARQUIVOS -----------------------------------------------------------
 $global:local=@{
-    variaveis=@{
-        padrao = $pasta.variaveis.esti+"padrao.ps1"
-        instaladores = $pasta.variaveis.esti+"instaladores.ps1"
+    importar=@{
+        variaveis = $pasta.importar.esti+"variaveis.ps1"
+        functions = $pasta.importar.esti+"functions.ps1"
+        instaladores = $pasta.importar.esti+"instaladores.ps1"
     }
 
     scripts=@{
@@ -68,7 +70,7 @@ $global:local=@{
     }
     modulos=@{
         esti = $pasta.modules.esti+"esti.ps1"
-        esti_functions = $pasta.modules.esti_functions+"esti_functions.ps1"
+        custom_functions = $pasta.modules.custom_functions+"custom_functions.ps1"
     }
 }
 # ARQUIVOS -----------------------------------------------------------
