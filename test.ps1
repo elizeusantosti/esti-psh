@@ -4,7 +4,7 @@ $esti_functions = "https://raw.githubusercontent.com/elizeusantosti/esti/main/mo
 
 Start-BitsTransfer -Source $variaveis_padrao -Destination $home\desktop
 
-.$home\desktop\test.ps1
+.$home\desktop\padrao.ps1
 
 $pasta.variaveis.values
 $pasta.modules.values
