@@ -2,6 +2,9 @@
 Invoke-WebRequest -Uri "https://raw.githubusercontent.com/elizeusantosti/esti/main/modulos/esti_functions.psm1" | Invoke-Expression
 Invoke-WebRequest -Uri "https://raw.githubusercontent.com/elizeusantosti/esti/main/variaveis/padrao.ps1" | Invoke-Expression
 
+$pasta.variaveis
+
+<#
 # Se nao existir cria as seguintes pastas.
 criar-pasta $pasta.variaveis.values
 $pasta.modules.values | foreach {criar-pasta $_}
@@ -14,3 +17,4 @@ baixar $main.modulos.esti $pasta.modules.esti
 baixar $main.modulos.esti_functions $pasta.modules.esti_functions
 
 $main.scripts.values | foreach {baixar $_ $pasta.scripts.esti}
+#>
