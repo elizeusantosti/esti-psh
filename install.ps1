@@ -1,5 +1,5 @@
 # Carrega as variáveis
-$padrao = Invoke-WebRequest -Uri "https://raw.githubusercontent.com/elizeusantosti/esti/main/variaveis/padrao.ps1"
+$padrao = Invoke-WebRequest -Uri "https://raw.githubusercontent.com/elizeusantosti/esti/main/importar/padrao.ps1"
 # É preciso invocar a url 2 vezes, como se estivesse em cache.
 Invoke-Expression $padrao
 Invoke-Expression $padrao
@@ -7,6 +7,8 @@ Invoke-Expression $padrao
 # Carrega as funções
 $functions = Invoke-WebRequest -Uri $main.modulos.esti_functions
 Invoke-Expression $functions
+
+#------------------------------------------------------------------------------------------------------------------
 
 # Se nao existir cria as seguintes pastas.
 criar-pasta $pasta.variaveis.values
