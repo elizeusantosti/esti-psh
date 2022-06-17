@@ -7,7 +7,7 @@ $global:esti=@{
 $global:main=@{
     diretorios=@{
         importar = $esti.main+"importar/"
-        modulos = $esti.main+"modulos/"
+        modules = $esti.main+"modules/"
         scripts = $esti.main+"scripts/"
     }
 
@@ -17,9 +17,9 @@ $global:main=@{
         instaladores = $main.diretorios.importar+"instaladores.ps1"
     }
     
-    modulos=@{        
-        esti=$main.diretorios.modulos+"esti.psm1"
-        custom_functions = $main.diretorios.modulos+"custom_functions.psm1"
+    modules=@{        
+        esti=$main.diretorios.modules+"esti.psm1"
+        custom_functions = $main.diretorios.modules+"custom_functions.psm1"
     }
 
     scripts=@{
@@ -68,7 +68,7 @@ $global:local=@{
         backup = $pasta.scripts.esti+"backup.ps1"
         organizar = $pasta.scripts.esti+"organizar.ps1"
     }
-    modulos=@{
+    modules=@{
         esti = $pasta.modules.esti+"esti.ps1"
         custom_functions = $pasta.modules.custom_functions+"custom_functions.ps1"
     }

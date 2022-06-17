@@ -1,12 +1,13 @@
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/elizeusantosti/esti/main/importar/variaveis.ps1" | Invoke-Expression
+
 function importar(){
     [cmdletbinding()]
     param(
         [Parameter(Mandatory=$true, Position=0)]
         [string]$script
     )
-    $import = Invoke-WebRequest -Uri "https://raw.githubusercontent.com/elizeusantosti/esti/main/importar/script.ps1"
-    Invoke-Expression $import
-    Invoke-Expression $import
+    $import = $main.diretorios.importar + "$script.ps1"
+    Invoke-WebRequest -Uri $import | Invoke-Expression
 }
 
 function baixar() {
