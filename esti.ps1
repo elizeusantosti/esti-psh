@@ -5,7 +5,7 @@ esti_database variaveis
 
 
 # Cria Pastas ----------------------------------------------
-$pasta.values | ForEach-Object {esti_criar_pasta $_.values}
+$pasta.values.values | foreach{esti_criar_pasta $_}
 #-----------------------------------------------------------
 
 
@@ -16,7 +16,7 @@ $main.database.values | ForEach-Object {esti_baixar $_ $pasta.database.esti}
 
 # Baixa Modulos ----------------------------------------------------------
 esti_baixar $main.modules.esti $pasta.modules.esti
-esti_baixar $main.modules.custom_functions $pasta.modules.custom_functions
+esti_baixar $main.modules.esti_functions $pasta.modules.esti_functions
 #-------------------------------------------------------------------------
 
 
