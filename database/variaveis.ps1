@@ -5,7 +5,7 @@ $esti.dev = "https://raw.githubusercontent.com/elizeusantosti/esti/dev/"
 
 
 $global:main=@{}
-$main.diretorios{}
+$main.diretorios=@{}
 $main.diretorios.database = $esti.main+"database/"
 $main.diretorios.modules = $esti.main+"modules/"
 $main.diretorios.scripts = $esti.main+"scripts/"
