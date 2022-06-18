@@ -12,7 +12,7 @@ $main.diretorios.scripts = $esti.main+'scripts/'
 
 $main.database=@{}
 $main.database.variaveis = $main.diretorios.database+'variaveis.ps1'
-$main.database.functions = $main.diretorios.database+'functions.ps1'
+$main.database.esti_functions = $main.diretorios.database+'esti_functions.ps1'
 $main.database.instaladores = $main.diretorios.database+'instaladores.ps1'
 
 $main.modules=@{}
@@ -50,7 +50,7 @@ $pasta.scripts.esti = "$powershell\scripts\esti\"
 $global:local=@{}
 $local.database=@{}
 $local.database.variaveis = $pasta.database.esti+'variaveis.ps1'
-$local.database.functions = $pasta.database.esti+'functions.ps1'
+$local.database.esti_functions = $pasta.database.esti+'esti_functions.ps1'
 $local.database.instaladores = $pasta.database.esti+'instaladores.ps1'
 
 $local.scripts=@{}
