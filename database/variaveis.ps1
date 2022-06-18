@@ -6,15 +6,15 @@ $global:esti=@{
 
 $global:main=@{
     diretorios=@{
-        importar = $esti.main+"importar/"
+        database = $esti.main+"database/"
         modules = $esti.main+"modules/"
         scripts = $esti.main+"scripts/"
     }
 
-    importar=@{
-        variaveis = $main.diretorios.importar+"variaveis.ps1"
-        functions = $main.diretorios.importar+"functions.ps1"
-        instaladores = $main.diretorios.importar+"instaladores.ps1"
+    database=@{
+        variaveis = $main.diretorios.database+"variaveis.ps1"
+        functions = $main.diretorios.database+"functions.ps1"
+        instaladores = $main.diretorios.database+"instaladores.ps1"
     }
     
     modules=@{        
@@ -37,8 +37,8 @@ $global:main=@{
 $global:pasta=@{
     powershell = "$home\documents\windowspowershell\"
 
-    importar = @{
-        esti = $pasta.powershell+"importar\esti\"
+    database = @{
+        esti = $pasta.powershell+"database\esti\"
     }
 
     modules = @{
@@ -56,10 +56,10 @@ $global:pasta=@{
 
 # ARQUIVOS -----------------------------------------------------------
 $global:local=@{
-    importar=@{
-        variaveis = $pasta.importar.esti+"variaveis.ps1"
-        functions = $pasta.importar.esti+"functions.ps1"
-        instaladores = $pasta.importar.esti+"instaladores.ps1"
+    database=@{
+        variaveis = $pasta.database.esti+"variaveis.ps1"
+        functions = $pasta.database.esti+"functions.ps1"
+        instaladores = $pasta.database.esti+"instaladores.ps1"
     }
 
     scripts=@{

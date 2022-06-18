@@ -1,4 +1,3 @@
-esti_importar variaveis -local
 function esti{
     param(
         [CmdletBinding()][Parameter(mandatory, position=0)]$script

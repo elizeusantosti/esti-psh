@@ -1,7 +1,7 @@
-# Setar funcao e importar variaveis ------------------------------------------------------------------------------------------
-Invoke-WebRequest -Uri "https://raw.githubusercontent.com/elizeusantosti/esti/main/importar/functions.ps1" | Invoke-Expression
-esti-importar variaveis
-#-----------------------------------------------------------------------------------------------------------------------------
+# Setar funcao e importar variaveis -----------------------------------------------------------------------------------------------
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/elizeusantosti/esti/main/database/esti_functions.ps1" | Invoke-Expression
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/elizeusantosti/esti/main/database/variaveis.ps1" | Invoke-Expression
+#----------------------------------------------------------------------------------------------------------------------------------
 
 
 # Pastas ---------------------------------------------------

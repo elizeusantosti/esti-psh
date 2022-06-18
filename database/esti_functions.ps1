@@ -1,16 +1,16 @@
-Invoke-WebRequest -Uri "https://raw.githubusercontent.com/elizeusantosti/esti/main/importar/variaveis.ps1" | Invoke-Expression
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/elizeusantosti/esti/main/database/variaveis.ps1" | Invoke-Expression
 
-function esti-importar(){
+function esti_database(){
     [cmdletbinding()]
     param(
         [Parameter(Mandatory=$true, Position=0)]
         [string]$script
     )
-    $import = $main.diretorios.importar + "$script.ps1"
+    $import = $main.diretorios.database + "$script.ps1"
     Invoke-WebRequest -Uri $import | Invoke-Expression
 }
 
-function esti-baixar() {
+function esti_baixar() {
     [CmdletBinding()]
     param(
         [Parameter(Mandatory=$true, Position=0)]
@@ -26,7 +26,7 @@ function esti-baixar() {
     }
 }
 
-function esti-criar-pasta($pasta) {
+function esti_criar_pasta($pasta) {
     Try {
         New-Item -Path $pasta -ItemType Directory -ErrorAction Stop
     }
