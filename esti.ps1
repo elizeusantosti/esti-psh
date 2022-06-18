@@ -1,27 +1,25 @@
 # Setar funcao e importar variaveis -----------------------------------------------------------------------------------------------
 Invoke-WebRequest -Uri "https://raw.githubusercontent.com/elizeusantosti/esti/main/database/esti_functions.ps1" | Invoke-Expression
-Invoke-WebRequest -Uri "https://raw.githubusercontent.com/elizeusantosti/esti/main/database/variaveis.ps1" | Invoke-Expression
+esti_database variaveis
 #----------------------------------------------------------------------------------------------------------------------------------
 
 
-# Pastas ---------------------------------------------------
-esti-criar-pasta $pasta.importar.esti
-$pasta.modules.values | ForEach-Object {esti-criar-pasta $_}
-$pasta.scripts.values | ForEach-Object {esti-criar-pasta $_}
+# Cria Pastas ----------------------------------------------
+$pasta.values | ForEach-Object {esti_criar_pasta $_.values}
 #-----------------------------------------------------------
 
 
-# Importacao ---------------------------------------------------------------
-$main.importar.values | ForEach-Object {esti-baixar $_ $pasta.importar.esti}
+# Baixa Importacao ---------------------------------------------------------
+$main.database.values | ForEach-Object {esti_baixar $_ $pasta.database.esti}
 #---------------------------------------------------------------------------
 
 
-# Modulos ----------------------------------------------------------------
-esti-baixar $main.modules.esti $pasta.modules.esti
-esti-baixar $main.modules.custom_functions $pasta.modules.custom_functions
+# Baixa Modulos ----------------------------------------------------------
+esti_baixar $main.modules.esti $pasta.modules.esti
+esti_baixar $main.modules.custom_functions $pasta.modules.custom_functions
 #-------------------------------------------------------------------------
 
 
-# Scripts ----------------------------------------------------------------
-$main.scripts.values | ForEach-Object {esti-baixar $_ $pasta.scripts.esti}
+# Baixa Scripts ----------------------------------------------------------
+$main.scripts.values | ForEach-Object {esti_baixar $_ $pasta.scripts.esti}
 #-------------------------------------------------------------------------
