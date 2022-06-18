@@ -1,11 +1,16 @@
-function esti{
+Invoke-Expression -Command '.$home\documents\windowspowershell\database\esti\variaveis.ps1'
+
+function esti(){
+    [cmdletbinding()]
     param(
-        [CmdletBinding()][Parameter(mandatory, position=0)]$script
+        [Parameter(Mandatory=$true, Position=0)]
+        [string]$script
     )
+    $secret_scripts = $pasta.scripts.esti+"$script.ps1"
     try {
-        .$pasta_scripts\esti\$script.ps1
+        Invoke-Expression -Command '.$secret_scripts'
     }
     catch {
-        Write-Host $_.Exception.Message -ForegroundColor red
+        Write-Host $_.Exception.Message -ForegroundColor Red
     }
 }
