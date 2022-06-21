@@ -1,8 +1,6 @@
-$repo = "esti"
-$branch = "main"
-$url = "https://raw.githubusercontent.com/elizeusantosti/$repo/$branch"
-
-#-files-----------------------------------
+$branch = "dev"
+$url = "https://raw.githubusercontent.com/elizeusantosti/esti/$branch"
+#-files---------------------------------------------------------------
 
 $file=@{}
 $file.module=@{}
@@ -18,7 +16,7 @@ $file.script.organizar = "organizar.ps1"
 $file.script.backup = "backup.ps1"
 
 
-#-urls------------------------------------
-
-$main=@{}
-$file.keys | foreach {$main.add("$main.$_", "$url/$_")}
+#-files_in_repo--------------------------------------------------------------
+# TO-TEST
+$files_in_repo=@{}
+$file.keys | foreach {$files_in_repo.add("$files_in_repo.$_=@{}", "$url/$_")}
