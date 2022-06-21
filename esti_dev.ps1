@@ -1,4 +1,4 @@
-#-INFORMAÇÃO-DO-REPOSITÓRIO------------------------------------------------
+#-INFORMAÃ‡ÃƒO-DO-REPOSITÃ“RIO------------------------------------------------
 $ramificacao = "dev"
 $url = "https://raw.githubusercontent.com/elizeusantosti/esti/$ramificacao"
 
@@ -17,9 +17,22 @@ $estrutura.GetEnumerator() | ForEach-Object{
     $repo.diretorio.add($_.key, $url + "/" + $_.key)
 }
 
-# Define os arquivos do repositório
-$repo.diretorio.arquivos=@{}
-$repo.diretorio.arquivos.modules
+# Define os arquivos do repositÃ³rio
+$repo.arquivos=@{}
+$repo.arquivos.databases=@{}
+$repo.arquivos.databases.esti = $repo.diretorio.databases + "/" + "esti.ps1"
+
+$repo.arquivos.modules=@{}
+$repo.arquivos.modules.esti = $repo.diretorio.modules.esti + "/" + "esti.psm1"
+$repo.arquivos.modules.custom_functions = $repo.diretorio.modules.custom_functions + "/" + "custom_functions.psm1"
+
+$repo.arquivos.scripts=@{}
+$repo.arquivos.scripts.arquivos=@{}
+$repo.arquivos.scripts.organizar=@{}
+$repo.arquivos.scripts.auto_install=@{}
+
+#
+
 
 
 
