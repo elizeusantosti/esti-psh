@@ -1,6 +1,6 @@
 #-INFORMAÇÃO-DO-REPOSITÓRIO------------------------------------------------
-$ramificacao = "dev"
-$url = "https://raw.githubusercontent.com/elizeusantosti/esti/$ramificacao"
+$branch = "dev"
+$url = "https://raw.githubusercontent.com/elizeusantosti/esti/$branch"
 
 
 # Define a estrutura do projeto.
@@ -26,64 +26,6 @@ $repo.arquivos.modules=@{}
 $repo.arquivos.modules.esti = $repo.diretorio.modules.esti + "/" + "esti.psm1"
 $repo.arquivos.modules.custom_functions = $repo.diretorio.modules.custom_functions + "/" + "custom_functions.psm1"
 
-$repo.arquivos.scripts=@{}
-$repo.arquivos.scripts.arquivos=@{}
-$repo.arquivos.scripts.organizar=@{}
-$repo.arquivos.scripts.auto_install=@{}
-
-#
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<#
-# databases
-$database=@{}
-$database.esti = "esti.ps1"
-$database.instaladores = "instaladores.ps1"
-# modules
-$module=@{}
-$module.esti = "esti.psm1"
-$module.custom_functions = "custom_functions.psm1"
-# scripts
-$script=@{}
-$script.organizar = "organizar.ps1"
-$script.backup = "backup.ps1"
-#-URLS-----------------------------------------------------------------
-$url=@{}
-# directories
-$url.directory=@{}
-
-# FILES
-$url.files=@{}
-# database
-$url.files.database=@{}
-$database.GetEnumerator() | ForEach-Object{
-    $url.files.database.add($_.Key, $_.Value)
-}
-#>
-#---------------------------------------------------------------------
+$repo.arquivos.scripts.auto_install = $repo.arquivos.scripts.auto_install + "/" + "auto_install.ps1"
+$repo.arquivos.scripts.backup = $repo.arquivos.scripts.backup + "/" + "backup.ps1"
+$repo.arquivos.scripts.organizar = $repo.arquivos.scripts.organizar + "/" + "organizar.ps1"
