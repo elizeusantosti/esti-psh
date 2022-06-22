@@ -26,6 +26,7 @@ $repo.arquivos.modules=@{}
 $repo.arquivos.modules.esti = $repo.diretorio.modules.esti + "/" + "esti.psm1"
 $repo.arquivos.modules.custom_functions = $repo.diretorio.modules.custom_functions + "/" + "custom_functions.psm1"
 
+$repo.arquivos.scripts=@{}
 $repo.arquivos.scripts.auto_install = $repo.arquivos.scripts.auto_install + "/" + "auto_install.ps1"
 $repo.arquivos.scripts.backup = $repo.arquivos.scripts.backup + "/" + "backup.ps1"
 $repo.arquivos.scripts.organizar = $repo.arquivos.scripts.organizar + "/" + "organizar.ps1"
