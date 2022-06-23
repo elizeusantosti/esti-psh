@@ -1,32 +1,62 @@
-#-INFORMAÇÃO-DO-REPOSITÓRIO------------------------------------------------
-$branch = "dev"
-$url = "https://raw.githubusercontent.com/elizeusantosti/esti/$branch"
+importar esti
+
+# Setar funcao e importar variaveis -----------------------------------------------------------------------------------------------
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/elizeusantosti/esti/main/modules/esti_functions.ps1" | Invoke-Expression
+esti_database variaveis
+#----------------------------------------------------------------------------------------------------------------------------------
 
 
-# Define a estrutura do projeto.
-$estrutura=@{
-    databases=@{}
-    modules=@{}
-    scripts=@{}
+# Cria Pastas ----------------------------------------------
+$pasta.values.values | foreach{esti_criar_pasta $_}
+#-----------------------------------------------------------
+
+
+# Baixa Importacao ---------------------------------------------------------
+$main.database.values | ForEach-Object {esti_baixar $_ $pasta.database.esti}
+#---------------------------------------------------------------------------
+
+
+# Baixa Modulos ----------------------------------------------------------
+esti_baixar $main.modules.esti $pasta.modules.esti
+esti_baixar $main.modules.esti_functions $pasta.modules.esti_functions
+#-------------------------------------------------------------------------
+
+
+# Baixa Scripts ----------------------------------------------------------
+$main.scripts.values | ForEach-Object {esti_baixar $_ $pasta.scripts.esti}
+#-------------------------------------------------------------------------
+
+function importar(){
+    [cmdletbinding()]
+    param(
+        [Parameter(Mandatory=$true, Position=0)]
+        [string]$arquivo
+    )
+    $importar = $repo.diretorio.database + "$arquivo.ps1"
+    Invoke-WebRequest -Uri $importar | Invoke-Expression
 }
 
-# Define pastas do repositorio com base na estrutura.
-$repo=@{}
-$repo.diretorio=@{}
-$estrutura.GetEnumerator() | ForEach-Object{
-    $repo.diretorio.add($_.key, $url + "/" + $_.key)
+function baixar() {
+    [CmdletBinding()]
+    param(
+        [Parameter(Mandatory=$true, Position=0)]
+        [string]$arquivo,
+        [Parameter(Mandatory=$true, Position=1)]
+        [string]$destino
+    )
+    try {
+        Start-BitsTransfer -Source $arquivo -Destination $destino
+    }
+    catch {
+        Write-Host $_.Exception.Message -ForegroundColor Red
+    }
 }
 
-# Define os arquivos do repositório
-$repo.arquivos=@{}
-$repo.arquivos.databases=@{}
-$repo.arquivos.databases.esti = $repo.diretorio.databases + "/" + "esti.ps1"
-
-$repo.arquivos.modules=@{}
-$repo.arquivos.modules.esti = $repo.diretorio.modules + "/" + "esti.psm1"
-$repo.arquivos.modules.custom_functions = $repo.diretorio.modules + "/" + "custom_functions.psm1"
-
-$repo.arquivos.scripts=@{}
-$repo.arquivos.scripts.auto_install = $repo.diretorio.scripts + "/" + "auto_install.ps1"
-$repo.arquivos.scripts.backup = $repo.diretorio.scripts + "/" + "backup.ps1"
-$repo.arquivos.scripts.organizar = $repo.diretorio.scripts + "/" + "organizar.ps1"
+function criar_pasta($pasta) {
+    Try {
+        New-Item -Path $pasta -ItemType Directory -ErrorAction Stop
+    }
+    Catch {
+        Write-Host $_.Exception.Message -ForegroundColor Red
+    }
+}
