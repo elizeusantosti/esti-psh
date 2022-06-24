@@ -1,24 +1,21 @@
-$repo = "esti"
-$branch = "main"
-$url = "https://raw.githubusercontent.com/elizeusantosti/$repo/$branch"
+$branch = merge"
+$url = "https://raw.githubusercontent.com/elizeusantosti/esti/$branch"
 
-#-files-----------------------------------
+#
 
-$file=@{}
-$file.module=@{}
-$file.module.esti = "esti.psm1"
-$file.module.custom_functions = "custom_functions.psm1"
+$global:estrutura=@{
+    Core=@{
+        esti_database = "esti_database.ps1"
+        esti_functions = "esti_functions.ps1"
+    }
 
-$file.database=@{}
-$file.database.esti = "esti.ps1"
-$file.database.instaladores = "instaladores.ps1"
+    Modules=@{
+        esti = "esti.ps1"
+    }
 
-$file.script=@{}
-$file.script.organizar = "organizar.ps1"
-$file.script.backup = "backup.ps1"
-
-
-#-urls------------------------------------
-
-$main=@{}
-$file.keys | foreach {$main.add("$main.$_", "$url/$_")}
+    Scripts=@{
+        auto_install = "auto_install.ps1"
+        backup = "backup.ps1"
+        organizar = "organizar.ps1"
+    }
+}
