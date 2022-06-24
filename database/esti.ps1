@@ -10,7 +10,7 @@ $global:estrutura=@{
     }
 
     Modules=@{
-        esti = "esti.ps1"
+        esti = "esti.psm1"
     }
 
     Scripts=@{
