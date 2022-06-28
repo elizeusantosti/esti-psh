@@ -1,4 +1,4 @@
-Invoke-Expression -Command '.$home\documents\windowspowershell\database\esti\variaveis.ps1'
+JuInvoke-Expression -Command '.$home\documents\windowspowershell\database\esti\variaveis.ps1'
 
 function esti(){
     [cmdletbinding()]
@@ -13,4 +13,23 @@ function esti(){
     catch {
         Write-Host $_.Exception.Message -ForegroundColor Red
     }
+}
+
+# Estrutura OK
+function backup{
+    [cmdletbinding()]
+    param(
+        [Parameter(position=0)]
+        [string]$origem
+    ),
+    [cmdletbinding()]
+    param(
+        [Parameter(position=0)]
+        [string]$destino
+    )
+    switch($item){
+        'origem' {}
+        'destino'{}
+    }
+    
 }
