@@ -1,11 +1,21 @@
-# Setar variaveis, importar base de dados variaveis--------------------------------------------------------------------------------
-$branch = "merge"
-$url = "https://raw.githubusercontent.com/elizeusantosti/esti/$branch
-Invoke-WebRequest -Uri "$url/esti_functions.ps1" | Invoke-Expression
-Invoke-WebRequest -Uri "$url/esti_database.ps1" | Invoke-Expression
-#----------------------------------------------------------------------------------------------------------------------------------
-# Configura as pastas e arquivos.
-$estrutura.getenumerator() | where-object($_ -notmatch "modules") | foreach {
-    $
-}
+Invoke-Expression -Command './esti_database.ps1'
+Invoke-Expression -Command './esti_functions.ps1'
 
+# Cria Pastas ----------------------------------------------
+#$pasta.padrao.values | foreach{$_}
+#$pasta.modules.values | foreach{$_}
+#-----------------------------------------------------------
+
+
+
+# Baixa Modulos ----------------------------------------------------------
+foreach ($item in $($arquivo.GetEnumerator())) {
+    foreach ($item2  in $arquivo[$item.key].Keys) {
+       $diretorio[$item.key] + $arquivo[$item.key][$item2]
+    }
+}
+#-------------------------------------------------------------------------
+
+# Baixa Scripts ----------------------------------------------------------
+#$main.scripts.values | ForEach-Object {esti_baixar $_ $pasta.scripts.esti}
+#-------------------------------------------------------------------------
