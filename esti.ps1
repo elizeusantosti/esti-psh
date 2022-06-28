@@ -16,6 +16,10 @@ foreach ($item in $($arquivo.GetEnumerator())) {
 }
 #-------------------------------------------------------------------------
 
+# Baixa a base de dados --------------------------------------------------
+# $diretorio.core.getenumerator() | foreach (baixar $_.value)
+#
+--------------------------------------------------------------------------
 # Baixa Scripts ----------------------------------------------------------
-#$main.scripts.values | ForEach-Object {esti_baixar $_ $pasta.scripts.esti}
+#$scripts.values | ForEach-Object {esti_baixar $_ $pasta.scripts.esti}
 #-------------------------------------------------------------------------
