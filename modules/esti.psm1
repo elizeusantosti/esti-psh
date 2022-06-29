@@ -33,3 +33,21 @@ function backup{
     }
     
 }
+
+function baixar{
+    [CmdLetBinding()]
+    Param(
+        [Parameter(position = 0)]
+        [ValidateSet('app','arquivo')]
+        [string]$item,
+        [Parameter(mandatory = $true, position = 1)]
+        [string]$nome,
+        [Parameter(position = 2)]
+        [string]$destino
+
+    )
+    Switch ($item){
+        'app' {Invoke-WebRequest -url $instaladores[$nome] $destino}
+        'arquivo'{Invoke-WebRequest -url $url[$nome] $destino}
+    }
+}
