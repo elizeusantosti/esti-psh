@@ -1,11 +1,11 @@
-write-host("esti_database importado com sucesso") -f Green
+Iwrite-host("esti_database importado com sucesso") -f Green
 
 #-INFORMAÇÕES----------------------------------------------------------
-$global:url = "https://raw.githubusercontent.com/elizeusantosti/esti/merge/"
+$global:url = "https://raw.githubusercontent.com/elizeusantosti/esti/testing/"
 $global:powershell = "$home\documents\windowspowershell\"
 #----------------------------------------------------------------------
 
-#-DADOS----------------
+#-----------------
 $global:diretorio = @{
     core = $null
     scripts = $null
@@ -43,9 +43,8 @@ foreach ($item in $($arquivo.values.keys)) {$arquivo.values[$item]}
 #--Define as pastas de modulos
 $($arquivo.modules.keys) | foreach {$pasta.modules=@{};$pasta.modules.add($_, $powershell + "modules\" + $_)}
 
-#--Define as pastas padrao
-$($pasta.keys) | Where-Object{$_ -notmatch "modules"} | foreach {$pasta[$_] = $powershell + $_ + "\esti"}
-
+#--Define a pasta core e scripts
+$($pasta) | foreach {$pasta.$_ = $powershell + $_ + "/esti"
 
 #--Agrupa os arquivos do repositorio com base nos diretorios
 
