@@ -2,8 +2,8 @@ Invoke-Expression -Command './esti_database.ps1'
 Invoke-Expression -Command './esti_functions.ps1'
 
 # Cria Pastas ----------------------------------------------
-#$pasta.padrao.values | foreach{$_}
-#$pasta.modules.values | foreach{$_}
+#criar_pasta $pasta.core
+#criar_pasta $pasta.modules
 #-----------------------------------------------------------
 
 
