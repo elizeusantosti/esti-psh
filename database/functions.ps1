@@ -1,5 +1,3 @@
-write-host("esti_functions importado com sucesso") -f Green
-
 function baixar() {
     [CmdletBinding()]
     param(
@@ -24,3 +22,5 @@ function criar_pasta($pasta) {
         Write-Host $_.Exception.Message -ForegroundColor Red
     }
 }
+
+write-host("esti_functions importado com sucesso") -f Green
