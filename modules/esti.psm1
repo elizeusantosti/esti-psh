@@ -1,5 +1,3 @@
-$global:suprimir_importacao = $true
-
 Invoke-Expression -Command '.$home\documents\windowspowershell\core\esti\database.ps1'
 
 function esti(){
@@ -16,3 +14,21 @@ function esti(){
         Write-Host $_.Exception.Message -ForegroundColor Red
     }
 }
+
+<# Testar !!
+function baixar {
+    [cmdletbinding()]
+    param(
+    [Parameter($mandatory=$true, position=0)]
+    [string]$arquivo,
+    [Paramater($mandatory)
+    [ValidateSet('url', 'repositorio')
+    [string]$item
+    )
+    Switch ($item) {
+        'url' {Start BitsTransfer -Source $arquivo -Destination $item}
+        'repositorio' {Star BitsTransfer -Source $arquivo -Destination $item + }
+    }
+    
+}
+#>
