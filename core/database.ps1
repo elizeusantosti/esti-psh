@@ -1,6 +1,6 @@
 write-host("esti_database importado com sucesso") -f Green
 
-#-INFORMAÇÕES----------------------------------------------------------
+#-INFORMAï¿½ï¿½ES----------------------------------------------------------
 $url = "https://raw.githubusercontent.com/elizeusantosti/esti/testing/"
 $powershell = "$home\documents\windowspowershell\"
 #----------------------------------------------------------------------
@@ -8,7 +8,7 @@ $powershell = "$home\documents\windowspowershell\"
 #-DADOS----------------
 $global:arquivo = @{
     core = @{database = 'database.ps1';functions = 'functions.ps1'}
-    scripts = @{auto_install = 'auto-install.ps1';backup = 'backup.ps1';organizar = 'organizar.ps1'}
+    scripts = @{auto_install = 'auto_install.ps1';backup = 'backup.ps1';organizar = 'organizar.ps1'}
     modules = @{esti = 'esti.psm1'}
     
 }
