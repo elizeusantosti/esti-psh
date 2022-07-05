@@ -1,4 +1,4 @@
-﻿$global:instaladores = @{
+$global:instaladores = @{
     wub = "https://www.sordum.org/files/download/windows-update-blocker/Wub.zip"
     zip  = "https://www.7-zip.org/a/7z2200-x64.exe"
     dwservice = "https://www.dwservice.net/download/dwagent_x86.exe"
