@@ -1,4 +1,4 @@
-write-host("functions importado com sucesso") -f Green
+if ($suprimir_importacao -ne $true) {write-host("database importado com sucesso") -f Green}
 
 function checar_arquivos_repositorio {
     "Checando a existancia dos arquivos em $branch..."
