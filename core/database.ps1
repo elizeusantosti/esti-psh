@@ -1,5 +1,3 @@
-if ($suprimir_importacao -ne $true) {write-host("database importado com sucesso") -f Green}
-
 #-INFORMACOES------------------------------------------------------------------
 $global:url = "https://raw.githubusercontent.com/elizeusantosti/esti/$branch/"
 $powershell = "$home\documents\windowspowershell\"
