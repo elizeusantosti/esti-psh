@@ -1,4 +1,4 @@
-JuInvoke-Expression -Command '.$home\documents\windowspowershell\database\esti\variaveis.ps1'
+Invoke-Expression -Command '.$home\documents\windowspowershell\database\esti\variaveis.ps1'
 
 function esti(){
     [cmdletbinding()]
