@@ -1,5 +1,6 @@
-iwr -uri "https://raw.githubusercontent.com/elizeusantosti/esti/testing/core/database.ps1" | iex
-iwr -uri "https://raw.githubusercontent.com/elizeusantosti/esti/testing/core/functions.ps1" | iex
+$caminho = split-path -parent $MyInvocation.MyCommand.Definition
+iex '.$caminho\database.ps1'
+iex '.$caminho\functions.ps1'
 
 # Cria Pastas ---------------------------------
 criar_pasta $pasta.core
@@ -7,7 +8,7 @@ $pasta.modules.values | foreach {criar_pasta $_}
 criar_pasta $pasta.scripts
 #----------------------------------------------
 
-# Baixa Core -----------------------------------------------
+# Core -----------------------------------------------
 $arquivo.core.values | foreach {baixar $_ $pasta.core}
 #-----------------------------------------------------
 
