@@ -1,7 +1,7 @@
 write-host("functions importado com sucesso") -f Green
 
 function checar_arquivos_repositorio {
-    "Checando a existência dos arquivos no repositório $repo/$branch..."
+    "Checando a existancia dos arquivos em $branch..."
 }
 
 function baixar {

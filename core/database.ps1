@@ -1,16 +1,14 @@
-write-host("esti_database importado com sucesso") -f Green
+write-host("database importado com sucesso") -f Green
 
-#-INFORMACOES----------------------------------------------------------
-$global:repo = "esti"
-$global:branch = "testing"
-$global:url = "https://raw.githubusercontent.com/elizeusantosti/$repo/$branch/"
+#-INFORMACOES------------------------------------------------------------------
+$global:url = "https://raw.githubusercontent.com/elizeusantosti/esti/$branch/"
 $powershell = "$home\documents\windowspowershell\"
-#----------------------------------------------------------------------
+#------------------------------------------------------------------------------
 
 #-DADOS----------------
 $global:arquivo = @{
-    core = @{database = 'database.ps1';functions = 'functions.ps1'}
-    scripts = @{auto_install = 'auto_install.ps1';backup = 'backup.ps1';organizar = 'organizar.ps1'}
+    core = @{database = 'database.ps1'; functions = 'functions.ps1'; instaladores = 'instaladores.ps1'}
+    scripts = @{auto_install = 'auto_install.ps1'; backup = 'backup.ps1'; organizar = 'organizar.ps1'; instaladores = 'instaladores.ps1'}
     modules = @{esti = 'esti.psm1'}
     
 }
