@@ -1,7 +1,9 @@
 write-host("esti_database importado com sucesso") -f Green
 
-#-INFORMA��ES----------------------------------------------------------
-$url = "https://raw.githubusercontent.com/elizeusantosti/esti/testing/"
+#-INFORMACOES----------------------------------------------------------
+$global:repo = "esti"
+$global:branch = "testing"
+$global:url = "https://raw.githubusercontent.com/elizeusantosti/$repo/$branch/"
 $powershell = "$home\documents\windowspowershell\"
 #----------------------------------------------------------------------
 
