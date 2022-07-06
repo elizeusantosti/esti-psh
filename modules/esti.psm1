@@ -1,3 +1,5 @@
+# Implement proxy functions to get $script cmdlet help.
+
 Invoke-Expression -Command '.$home\documents\windowspowershell\core\esti\database.ps1'
 
 function esti(){
