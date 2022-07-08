@@ -11,5 +11,4 @@ iwr -uri "https://raw.githubusercontent.com/elizeusantosti/esti/$branch/core/ins
 $instaladores.GetEnumerator() | foreach {
     baixar $_.value $destino
     $app = $_.key; Write-Host("O $app está sendo baixado...")
-    # Testar > $destino Get-Items | foreach {.$_}
 }
