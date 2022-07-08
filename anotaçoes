@@ -1,0 +1,6 @@
+$url = "https://raw.githubusercontent.com/elizeusantosti/esti/testing/esti.ps1" 
+Invoke-WebRequest -Uri $url -UseBasicParsing | Invoke-Expression
+
+Install-Module ps2exe
+
+.\driver_booster_setup.exe -Wait -ArgumentList "/silent" -PassThru
