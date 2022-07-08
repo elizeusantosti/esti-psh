@@ -1,3 +1,3 @@
 # Instalação
 
-    iwr https://raw.githubusercontent.com/elizeusantosti/esti/testing/esti.ps1 | iex
+    iwr https://raw.githubusercontent.com/elizeusantosti/esti/ready080722/esti.ps1 | iex
