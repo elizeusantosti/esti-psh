@@ -1,6 +1,0 @@
-organizar - adicionar na inicialização
-
-organizar - adicionar no registro (menu contexto)
-
-# CRIAR FUNCOES PARA A MELHORA DO VISUAL DOS SCRIPTS 
-write-host "•" -f cyan -NoNewline;write-host " Atalhos";write-host "  |• " -f cyan -NoNewline;write-host "test.lnk";write-host "  |• " -f cyan -NoNewline;write-host "chrome.lnk"
