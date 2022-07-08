@@ -11,7 +11,7 @@ criar_pasta $origem
 
 # Baixa os instaladores.
 $instaladores.GetEnumerator() | foreach {
-    baixar $_.value $destino
+    baixar $_.value $origem
     $app = $_.key; Write-Host("O $app está sendo baixado...")
 
 }
