@@ -1,7 +1,7 @@
 $global:branch = "testing"
 
-iwr -uri "https://raw.githubusercontent.com/elizeusantosti/esti/testing/core/database.ps1" | iex
-iwr -uri "https://raw.githubusercontent.com/elizeusantosti/esti/testing/core/functions.ps1" | iex
+Invoke-WebRequest -uri "https://raw.githubusercontent.com/elizeusantosti/esti/testing/core/database.ps1" -UseBasicParsing | Invoke-Expression
+Invoke-WebRequest -uri "https://raw.githubusercontent.com/elizeusantosti/esti/testing/core/functions.ps1" -UseBasicParsing | Invoke-Expression
 
 # Cria Pastas ----------------------------------
 criar_pasta $pasta.core
