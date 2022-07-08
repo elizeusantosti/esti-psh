@@ -6,7 +6,7 @@ $powershell = "$home\documents\windowspowershell\"
 #-DADOS----------------
 $global:arquivo = @{
     core = @{database = 'database.ps1'; functions = 'functions.ps1'; instaladores = 'instaladores.ps1'}
-    scripts = @{auto_install = 'auto_install.ps1'; backup = 'backup.ps1'; organizar = 'organizar.ps1'; instaladores = 'instaladores.ps1'}
+    scripts = @{arquivos = 'arquivos.ps1' ;auto_install = 'auto_install.ps1'; backup = 'backup.ps1'; organizar = 'organizar.ps1'; instaladores = 'instaladores.ps1'}
     modules = @{esti = 'esti.psm1'}
     
 }
