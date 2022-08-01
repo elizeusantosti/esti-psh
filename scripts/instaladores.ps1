@@ -2,8 +2,8 @@
 $global:branch = "testing"
 
 # Importa os arquivos de configuração do script.
-iwr -uri "https://raw.githubusercontent.com/elizeusantosti/esti/$branch/core/functions.ps1" | iex
-iwr -uri "https://raw.githubusercontent.com/elizeusantosti/esti/$branch/core/instaladores.ps1" | iex
+iwr -UseBasicParsing -uri "https://raw.githubusercontent.com/elizeusantosti/esti/$branch/core/functions.ps1" | iex
+iwr -UseBasicParsing -uri "https://raw.githubusercontent.com/elizeusantosti/esti/$branch/core/instaladores.ps1" | iex
 
 $origem = "c:\util"
 
